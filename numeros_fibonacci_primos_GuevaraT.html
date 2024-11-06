@@ -1,0 +1,44 @@
+<script>
+    //Realizar un algoritmo que presente los 10 primeros números Fibonacci y cuente
+	//cuántos números primos hay.
+
+    let alfa = 1, beta = 0, contador = 0, Primo = 0;
+    let fibo;
+
+    while(contador <= 10){
+        fibo = alfa + beta;
+        document.write(fibo, "<br>")
+
+        if(verificarNumeroPrimo(fibo)){
+            Primo ++;
+            document.write("EL NUMERO ES PRIMO", "<br>")
+        }       
+        else{
+            document.write("EL NUMERO NO ES PRIMO", "<br>")
+        } 
+    alfa = beta;
+    beta = fibo;
+    contador ++;
+    }
+
+    document.write("EL TOTAL DE NUMEROS PRIMOS ES: ", Primo)
+
+
+    function verificarNumeroPrimo(fibo){
+        
+        let contador = 2;
+        let esPrimo = true
+        let numero = 0
+
+        while( contador < numero ){
+            if (numero % contador == 0){
+                esPrimo = false;
+                break;
+            }
+            contador ++;
+        }
+        return esPrimo;  
+}    
+          
+
+</script>
